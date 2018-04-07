@@ -22,7 +22,7 @@ public class Canvas {
 	    gPane.setGridLinesVisible(true);
 
 		Button[][] TileArray = new Button[5][5]; 
-		
+        
 		for (int i = 0; i < 5; i++) {
 			 ColumnConstraints column = new ColumnConstraints(120);
 	         gPane.getColumnConstraints().add(column);
