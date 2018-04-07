@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.JFileChooser;
@@ -14,15 +15,22 @@ import javafx.stage.Stage;
 public class Main extends Application  {
 
 	public static void main(String[] args) {
+//		try {
+//			Runtime.getRuntime().exec("explorer.exe /select," + "C:/");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		  JFileChooser chooser = new JFileChooser();
-		    FileNameExtensionFilter filter = new FileNameExtensionFilter(
-		        "JPG & GIF Images", "jpg", "gif");
+		  chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		    FileNameExtensionFilter filter = new FileNameExtensionFilter(".jpg", ".png");
 		    chooser.setFileFilter(filter);
 		    int returnVal = chooser.showOpenDialog(chooser);
+		    
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
 		       System.out.println("You chose to open this file: " +
 		            chooser.getSelectedFile().getName());
 		    }
+		    
 //		String fileName = "file.txt";
 //		File inputFile = null;
 //		Scanner sc = null;
