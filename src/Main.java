@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.JFileChooser;
@@ -15,6 +16,7 @@ public class Main extends Application {
 	Pixelator pxlor = new Pixelator();
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		JFileChooser chooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg",
 				"png", "bmp", "tiff");
@@ -36,6 +38,41 @@ public class Main extends Application {
 		// ex.printStackTrace();
 		// System.exit(-1);
 		// }
+=======
+//		try {
+//			Runtime.getRuntime().exec("explorer.exe /select," + "C:/");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		  JFileChooser chooser = new JFileChooser();
+<<<<<<< HEAD
+		  chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		    FileNameExtensionFilter filter = new FileNameExtensionFilter(".jpg", ".png");
+=======
+		    FileNameExtensionFilter filter = new FileNameExtensionFilter(
+		        "Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg", "png", "bmp", "tiff");
+>>>>>>> 3ab1da4b5e1cd6a38fe29dbb4cae1d520b35ed31
+		    chooser.setFileFilter(filter);
+		    int returnVal = chooser.showOpenDialog(chooser);
+		    
+		    if(returnVal == JFileChooser.APPROVE_OPTION) {
+		       System.out.println("You chose to open this file: " +
+		            chooser.getSelectedFile().getName());
+		    }
+		    
+//		String fileName = "file.txt";
+//		File inputFile = null;
+//		Scanner sc = null;
+//
+//		try {
+//			inputFile = new File(fileName);
+//			sc = new Scanner(inputFile);
+//			sc.close();
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//			System.exit(-1);
+//		}
+>>>>>>> b625d04ef89637b30e4df3516ab3639b3a7ece7f
 
 		launch(args);
 	}
