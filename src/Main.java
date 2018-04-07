@@ -16,7 +16,7 @@ public class Main extends Application  {
 	public static void main(String[] args) {
 		  JFileChooser chooser = new JFileChooser();
 		    FileNameExtensionFilter filter = new FileNameExtensionFilter(
-		        "JPG & GIF Images", "jpg", "gif");
+		        "Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg", "png", "bmp", "tiff");
 		    chooser.setFileFilter(filter);
 		    int returnVal = chooser.showOpenDialog(chooser);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
