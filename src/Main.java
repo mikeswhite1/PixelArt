@@ -22,9 +22,13 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+
+import java.awt.color.*;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	Pixelator art;
+	java.awt.Color[][] colors;
 
 	public static void main(String[] args) {
 <<<<<<< HEAD
@@ -83,10 +87,6 @@ public class Main extends Application {
 	
 		
 		borderPane.setTop(toolbar);
-		
-//		fileMenu.getItems().addAll(open, save);
-//		menuBar.getMenus().addAll(fileMenu);
-		//((HBox)scene.getRoot()).getChildren().addAll(menuBar);
 
 		borderPane.setTop(toolbar);
 		borderPane.setCenter(gPane);
