@@ -4,7 +4,7 @@ import javax.imageio.*;
 import java.io.*;
 import java.util.*;
 //getRGB
-public class PicReaderWriter {
+public class Pixelator {
 	
 	public static BufferedImage pixelate(BufferedImage imageToPixelate, int pixelSize) {
         BufferedImage pixelateImage = new BufferedImage(
