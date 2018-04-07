@@ -21,17 +21,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+
+import java.awt.color.*;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	Pixelator art;
+	java.awt.Color[][] colors;
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 745522dbe3f750d648165168decb16ee94de3b19
 		JFileChooser chooser = new JFileChooser();
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg",
@@ -44,15 +42,11 @@ public class Main extends Application {
 		}
 
 
->>>>>>> 0a2b654c056e44f58649b0f39f72f522e32f2224
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		//		Pixelator art;
-		//		Color[][] colors;
-
 		primaryStage.setTitle("Form");
 
 		BorderPane borderPane = new BorderPane();
@@ -69,8 +63,8 @@ public class Main extends Application {
 				int returnVal = chooser.showOpenDialog(chooser);
 
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					//					art = Pixelator(chooser.getSelectedFile(), 10);
-					//					colors = art.getColors();
+					art = new Pixelator(chooser.getSelectedFile(), 10);
+					colors = art.getColor();
 				}
 			}
 		});
@@ -82,10 +76,6 @@ public class Main extends Application {
 	
 		
 		borderPane.setTop(toolbar);
-		
-//		fileMenu.getItems().addAll(open, save);
-//		menuBar.getMenus().addAll(fileMenu);
-		//((HBox)scene.getRoot()).getChildren().addAll(menuBar);
 
 		borderPane.setTop(toolbar);
 		borderPane.setCenter(gPane);
