@@ -23,10 +23,55 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+public class Main extends Application {
 
-public class Main extends Application  {
+	Pixelator pxlor = new Pixelator();
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		JFileChooser chooser = new JFileChooser();
+		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg",
+				"png", "bmp", "tiff");
+		chooser.setFileFilter(filter);
+		int returnVal = chooser.showOpenDialog(chooser);
+
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			System.out.println("You chose to open this file: " + chooser.getSelectedFile().getName());
+		}
+=======
+		//		try {
+		//			Runtime.getRuntime().exec("explorer.exe /select," + "C:/");
+		//		} catch (IOException e) {
+		//			e.printStackTrace();
+		//		}
+		JFileChooser chooser = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg", "png", "bmp", "tiff");
+		chooser.setFileFilter(filter);
+		int returnVal = chooser.showOpenDialog(chooser);
+
+		if(returnVal == JFileChooser.APPROVE_OPTION) {
+			System.out.println("You chose to open this file: " +
+					chooser.getSelectedFile().getName());
+		}
+
+		//		String fileName = "file.txt";
+		//		File inputFile = null;
+		//		Scanner sc = null;
+		//
+		//		try {
+		//			inputFile = new File(fileName);
+		//			sc = new Scanner(inputFile);
+		//			sc.close();
+		//		} catch (Exception ex) {
+		//			ex.printStackTrace();
+		//			System.exit(-1);
+		//		}
+>>>>>>> 06aa8fa51a6ba4ec42131f983713bd4253fc620e
+
+>>>>>>> 0a2b654c056e44f58649b0f39f72f522e32f2224
 		launch(args);
 	}
 
