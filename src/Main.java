@@ -21,8 +21,13 @@ public class Main extends Application  {
 //			e.printStackTrace();
 //		}
 		  JFileChooser chooser = new JFileChooser();
+<<<<<<< HEAD
 		  chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		    FileNameExtensionFilter filter = new FileNameExtensionFilter(".jpg", ".png");
+=======
+		    FileNameExtensionFilter filter = new FileNameExtensionFilter(
+		        "Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg", "png", "bmp", "tiff");
+>>>>>>> 3ab1da4b5e1cd6a38fe29dbb4cae1d520b35ed31
 		    chooser.setFileFilter(filter);
 		    int returnVal = chooser.showOpenDialog(chooser);
 		    
