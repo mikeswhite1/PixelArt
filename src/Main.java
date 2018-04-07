@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -50,8 +51,8 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		//		Pixelator art;
-		//		Color[][] colors;
+				Pixelator art;
+				Color[][] colors;
 
 		primaryStage.setTitle("Form");
 
@@ -69,8 +70,8 @@ public class Main extends Application {
 				int returnVal = chooser.showOpenDialog(chooser);
 
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					//					art = Pixelator(chooser.getSelectedFile(), 10);
-					//					colors = art.getColors();
+										art = new Pixelator(chooser.getSelectedFile(), 10);
+										colors = art.getColor();
 				}
 			}
 		});
