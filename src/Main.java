@@ -31,41 +31,12 @@ public class Main extends Application {
 	java.awt.Color[][] colors;
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 745522dbe3f750d648165168decb16ee94de3b19
-		JFileChooser chooser = new JFileChooser();
-		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg",
-				"png", "bmp", "tiff");
-		chooser.setFileFilter(filter);
-		int returnVal = chooser.showOpenDialog(chooser);
 
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			System.out.println("You chose to open this file: " + chooser.getSelectedFile().getName());
-		}
-
-
->>>>>>> 0a2b654c056e44f58649b0f39f72f522e32f2224
-=======
->>>>>>> good
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-<<<<<<< HEAD
-				Pixelator art;
-				Color[][] colors;
-
-		primaryStage.setTitle("Form");
-
-=======
->>>>>>> good
 		BorderPane borderPane = new BorderPane();
 		GridPane gPane = new GridPane();
 
@@ -80,24 +51,19 @@ public class Main extends Application {
 				int returnVal = chooser.showOpenDialog(chooser);
 
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-<<<<<<< HEAD
-										art = new Pixelator(chooser.getSelectedFile(), 10);
-										colors = art.getColor();
-=======
 					art = new Pixelator(chooser.getSelectedFile(), 8);
 					colors = art.getColor();
 					new Canvas(primaryStage, gPane, colors);
->>>>>>> good
 				}
 			}
 		});
-		
+
 		Button save = new Button("Save image");
-		
+
 		ToolBar toolbar = new ToolBar();
 		toolbar.getItems().addAll(open, save);
-	
-		
+
+
 		borderPane.setTop(toolbar);
 
 		borderPane.setTop(toolbar);
