@@ -12,30 +12,44 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.paint.Color;
+import java.awt.Color;
 import javafx.stage.Stage;
 
 public class Canvas {
-	Canvas(Stage primaryStage, GridPane gPane) {
+	Color[][] colors;
+	
+	Canvas(Stage primaryStage, GridPane gPane, Color[][] colors) {
+		this.colors = colors;
+		
+		gPane.setPrefSize(600, 600);
+		gPane.setGridLinesVisible(true);
 
-	    gPane.setPrefSize(600, 600);
-	    gPane.setGridLinesVisible(true);
+		Button[][] TileArray = new Button[colors.length][colors[0].length]; 
 
-		Button[][] TileArray = new Button[5][5]; 
-        
-		for (int i = 0; i < 5; i++) {
-			 ColumnConstraints column = new ColumnConstraints(120);
-	         gPane.getColumnConstraints().add(column);
-			 RowConstraints row = new RowConstraints(120);
-	         gPane.getRowConstraints().add(row);
-			for (int ii = 0; ii < 5; ii++) {
+		System.out.println(colors[0][0].getRGB());
+		System.out.println(colors[0].length);
+//		for (int i = 0; i < colors[0].length; i++) {
+//			ColumnConstraints column = new ColumnConstraints(600/colors.length);
+//			gPane.getColumnConstraints().add(column);
+//		}
+//		for (int i = 0; i < colors.length; i++) {
+//			RowConstraints row = new RowConstraints(600/colors.length);
+//			gPane.getRowConstraints().add(row);
+//		}
+		for (int y = 0; y < colors.length; y++) {
+			for (int x = 0; x < colors[0].length; x++) {
 				Button tile = new Button();
-				tile.setStyle("-fx-border-color: #FFFFFF; -fx-border-width: .25px; -fx-font: 22 arial; -fx-base: #000000;");
-				tile.setMaxWidth(Double.MAX_VALUE);
-				tile.setMaxHeight(Double.MAX_VALUE);
-				tile.setText("" + (i*5 + ii + 1));
-				TileArray[i][ii] = tile;
-				gPane.add(tile, ii, i);
+				//tile.setStyle("-fx-border-color: #FFFFFF; -fx-border-width: .25px; -fx-font: 22 arial; -fx-base: #000000;");
+				int r = colors[y][x].getRed();
+				int g = colors[y][x].getGreen();
+				int b = colors[y][x].getBlue();
+				int avg = (r + g + b)/3;
+				tile.setStyle("-fx-background-color: rgb(" + avg + "," + avg + ", " + avg + ");");
+				//tile.setMaxWidth(Double.MAX_VALUE);
+				//tile.setMaxHeight(Double.MAX_VALUE);
+				tile.setText("" + (y*5 + x + 1));
+				//TileArray[y][x] = tile;
+				gPane.add(tile, y, x);
 			}
 		}
 	}

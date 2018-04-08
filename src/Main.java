@@ -30,29 +30,15 @@ public class Main extends Application {
 	java.awt.Color[][] colors;
 
 	public static void main(String[] args) {
-		JFileChooser chooser = new JFileChooser();
-		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Images(*.jpg, *.png, *.tiff, *.bmp)", "jpg",
-				"png", "bmp", "tiff");
-		chooser.setFileFilter(filter);
-		int returnVal = chooser.showOpenDialog(chooser);
-
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			System.out.println("You chose to open this file: " + chooser.getSelectedFile().getName());
-		}
-
-
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("Form");
-
 		BorderPane borderPane = new BorderPane();
 		GridPane gPane = new GridPane();
 
-		Scene scene = new Scene(borderPane, 600, 630, Color.DARKGRAY);
+		Scene scene = new Scene(borderPane, 600, 630, Color.WHITE);
 
 		Button open = new Button("Open file");
 		open.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,8 +49,9 @@ public class Main extends Application {
 				int returnVal = chooser.showOpenDialog(chooser);
 
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					art = new Pixelator(chooser.getSelectedFile(), 10);
+					art = new Pixelator(chooser.getSelectedFile(), 8);
 					colors = art.getColor();
+					new Canvas(primaryStage, gPane, colors);
 				}
 			}
 		});
@@ -80,7 +67,6 @@ public class Main extends Application {
 		borderPane.setTop(toolbar);
 		borderPane.setCenter(gPane);
 
-		new Canvas(primaryStage, gPane);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

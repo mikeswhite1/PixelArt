@@ -52,18 +52,24 @@ public class Pixelator {
             imageToPixelate.getWidth(),
             imageToPixelate.getHeight(),
             imageToPixelate.getType());
-        colorArray = new Color[imageToPixelate.getHeight()][imageToPixelate.getWidth()];
+        colorArray = new Color[imageToPixelate.getHeight()/pixelSize + 1][imageToPixelate.getWidth()/pixelSize + 1];
+        int yy = 0;
+        int xx = 0;
         for (int y = 0; y < imageToPixelate.getHeight(); y += pixelSize) {
-            for (int x = 0; x < imageToPixelate.getWidth(); x += pixelSize) {
+        	for (int x = 0; x < imageToPixelate.getWidth(); x += pixelSize) {
                 BufferedImage croppedImage = getCroppedImage(imageToPixelate, x, y, pixelSize, pixelSize);
                 Color dominantColor = getDominantColor(croppedImage);
-                for (int yd = y; (yd < y + pixelSize) && (yd < pixelateImage.getHeight()); yd++) {
-                    for (int xd = x; (xd < x + pixelSize) && (xd < pixelateImage.getWidth()); xd++) {
-                        pixelateImage.setRGB(xd, yd, dominantColor.getRGB());
-                        colorArray[yd][xd] = new Color(dominantColor.getRGB());
-                    }
-                }
+                colorArray[yy][xx] = new Color(dominantColor.getRGB());
+
+//                for (int yd = y; (yd < y + pixelSize) && (yd < pixelateImage.getHeight()); yd++) {
+//                    for (int xd = x; (xd < x + pixelSize) && (xd < pixelateImage.getWidth()); xd++) {
+//                        pixelateImage.setRGB(xd, yd, dominantColor.getRGB());
+//                        colorArray[yd][xd] = new Color(dominantColor.getRGB());
+//                    }
+//                }
+              xx++;
             }
+        	yy++;
         }
 
         return pixelateImage;
