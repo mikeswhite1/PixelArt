@@ -84,7 +84,7 @@ public class Pixelator {
 			pixColor = new Color[fullColor.length/pixelRate][fullColor[0].length/pixelRate];
 		}
         for (int y = 0; y < imageToPixelate.getHeight(); y += pixelSize) {
-            for (int x = 0; x < imageToPixelate.getWidth(); x += pixelSize) {
+        	for (int x = 0; x < imageToPixelate.getWidth(); x += pixelSize) {
                 BufferedImage croppedImage = getCroppedImage(imageToPixelate, x, y, pixelSize, pixelSize);
                 Color dominantColor = getDominantColor(croppedImage);
                 pixColor[y][x] = dominantColor;

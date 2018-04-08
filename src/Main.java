@@ -32,6 +32,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -50,20 +51,25 @@ public class Main extends Application {
 
 
 >>>>>>> 0a2b654c056e44f58649b0f39f72f522e32f2224
+=======
+>>>>>>> good
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+<<<<<<< HEAD
 				Pixelator art;
 				Color[][] colors;
 
 		primaryStage.setTitle("Form");
 
+=======
+>>>>>>> good
 		BorderPane borderPane = new BorderPane();
 		GridPane gPane = new GridPane();
 
-		Scene scene = new Scene(borderPane, 600, 630, Color.DARKGRAY);
+		Scene scene = new Scene(borderPane, 600, 630, Color.WHITE);
 
 		Button open = new Button("Open file");
 		open.setOnAction(new EventHandler<ActionEvent>() {
@@ -74,8 +80,14 @@ public class Main extends Application {
 				int returnVal = chooser.showOpenDialog(chooser);
 
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
+<<<<<<< HEAD
 										art = new Pixelator(chooser.getSelectedFile(), 10);
 										colors = art.getColor();
+=======
+					art = new Pixelator(chooser.getSelectedFile(), 8);
+					colors = art.getColor();
+					new Canvas(primaryStage, gPane, colors);
+>>>>>>> good
 				}
 			}
 		});
@@ -91,7 +103,6 @@ public class Main extends Application {
 		borderPane.setTop(toolbar);
 		borderPane.setCenter(gPane);
 
-		new Canvas(primaryStage, gPane);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
